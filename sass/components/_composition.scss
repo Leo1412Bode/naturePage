@@ -7,7 +7,7 @@
     position: absolute;
     z-index: 10;
     transition: all 0.2s;
-    outline-offset: 2rem;
+    outline-offset: .8rem;
 
     //Posicionar las imagenes una encima de las otras
     &--p1 {
@@ -25,7 +25,7 @@
 
     &:hover {
       //Darle un border al box cuando le pase pro arriba
-      outline: 1.2rem solid $color-primary;
+      outline: .2rem solid $color-primary;
       //
       transform: scale(1.05) translateY(-0.5rem);
       box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);

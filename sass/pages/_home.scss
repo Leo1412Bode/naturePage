@@ -13,5 +13,18 @@
     ),
     url(../img/nat-4.jpg);
   background-size: cover;
-  
+  // Para mover el backgroudn image unos grados y que se ve a el efecto de estar inclinado
+  transform: skewY(-7deg);
+  margin-top: -10rem;
+
+  // Esto es para que los elemntos dentro del background vuelvan a su estado normal
+  & > * {
+    transform: skewY(7deg);
+  }
+}
+
+.section-tours {
+  background-color: $color-grey-light;
+  padding: 25rem 0 50rem 0;
+  margin-top: -10rem;
 }

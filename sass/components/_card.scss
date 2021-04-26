@@ -1,0 +1,78 @@
+.card {
+  //FUNCIONALIDAD DEL CARD
+  //Se utiliza para manejar el efecto que da el box cuando se vira y no de una mala impresion
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+
+  //EL height lo tuve que poner arriba porqu el el child no se boto del box y el perspective no funcionaba
+  height: 50rem;
+
+  &__side {
+    background-color: salmon;
+    color: white;
+    font-size: 2rem;
+    height: 50rem;
+    transition: all 0.8s ease;
+
+    //El position absolute es para que se ponga uno arriba del otro , es importante que el padre este en relatie
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    //Esto es para que no se vea nada de atras
+    backface-visibility: hidden;
+    border-radius: 3px;
+    //La imagen esta overflow sobre los bordes y no se nota el border-radius por eso se usa el overflow:hiden
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      background-color: seagreen;
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0deg);
+  }
+
+  //FRONT CARD fUNCIONALIDAD DENTRO DEL CARD IMG-HEADING-DETAILS
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    //Esto es para en vez de darle opacity al color, se le aplica el blend mode y la union de imagen con color se ve mejor y es mas facil
+    background-blend-mode: screen;
+
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../img/nat-5.jpg);
+    }
+    &--2 {
+      background-image: url(../img/nat-5.img);
+    }
+    &--3 {
+      background-image: url(../img/nat-5.img);
+    }
+  }
+}
